@@ -1,8 +1,8 @@
-package com.androiddevs.mvvmnewsapp.views
+package com.bassel.mvvmnewsapp.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.androiddevs.mvvmnewsapp.R
+import com.bassel.mvvmnewsapp.R
 
 class NewsActivity : AppCompatActivity() {
 

@@ -9,7 +9,7 @@ import com.bassel.mvvmnewsapp.models.Article
 
 @Database(
     entities = [Article::class],
-    version = 1
+    version = 2
 )
 @TypeConverters(Converters::class)
 abstract class ArticleDatabase : RoomDatabase() {
@@ -36,6 +36,7 @@ abstract class ArticleDatabase : RoomDatabase() {
         operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
             instance ?: createDatabase(context).also { instance = it }
         }
+
         /**
          * create instance from this class and a database for one time
          */
@@ -43,6 +44,8 @@ abstract class ArticleDatabase : RoomDatabase() {
             context.applicationContext,
             ArticleDatabase::class.java,
             "article_db.db"
-        ).build()
+        )
+            .fallbackToDestructiveMigration()
+            .build()
     }
 }

@@ -20,7 +20,11 @@
     <fragment
         android:id="@+id/articleFragment"
         android:name="com.bassel.mvvmnewsapp.views.fragments.ArticleFragment"
-        android:label="ArticleFragment" />
+        android:label="ArticleFragment" >
+        <argument
+            android:name="article"
+            app:argType="com.bassel.mvvmnewsapp.models.Article" />
+    </fragment>
     <fragment
         android:id="@+id/savedNewsFragment"
         android:name="com.bassel.mvvmnewsapp.views.fragments.SavedNewsFragment"
